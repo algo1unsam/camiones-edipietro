@@ -11,7 +11,6 @@ object knightRider {
 	}
 
 }
-
 object bumblebee {
    
 	var property forma = auto
