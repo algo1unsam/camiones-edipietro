@@ -4,7 +4,7 @@ object deposito {
 
 	var property mercaderia=[]
 	var property objetosguardados = []
-     
+  
 
 	method recibirCosas(cosas) {
 		mercaderia.addAll(cosas)

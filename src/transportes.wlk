@@ -5,7 +5,6 @@ object camion{
 	
 	var property cosas = []
 	var property sumadecosas = 0
-
 	method cargar(cosa) {
 		cosas.add(cosa)
 		self.guardar()
