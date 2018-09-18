@@ -1,23 +1,49 @@
 import deposito.*
 import CosasAtransportar.*
 
-object camion{
-	
+object camion {
+
+	var cargamax = 10000
 	var property cosas = []
-	var property sumadecosas = 0
+	
+
 	method cargar(cosa) {
 		cosas.add(cosa)
-		self.guardar()
 	}
 
 	method descargar(cosa) {
 		cosas.remove(cosa)
 	}
 
-	method guardar() {
-		sumadecosas = sumadecosas + 1
+	method tenesCargado(cosa) {
+		return cosas.all{ elemento => cosas.cargar(cosa) }
+	}
+
+	method cualEstuPeso() {
+		return cosas.sum{ elementos => elementos.peso() }
 	}
 	
-	method sumaLosPesos(){return cosas.sum{cosa => cosas.peso()}}
-	
+
+	method cargaDisponible() {
+		return cosas.max {cosillas=> cosillas.peso()} - self.cualEstuPeso()}
+
+
+   method puedeCargar(cosa){
+   
+   	if ((cosas.max()).peso() > cargamax){
+   	 error.throwWithMessage("No se puede cargar mercadería")}
+   	   	else
+   	   	self.cargar(cosa)
+   }
 }
+
+object motoneta {
+
+	var property cosas = []
+
+	method cargar(elemento) {
+		if (cosas.nivelDePeligrosidad() <= 5 && cosas.peso() <= 100) cosas.add(elemento)
+	}
+
+}
+

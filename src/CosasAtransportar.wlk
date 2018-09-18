@@ -3,12 +3,11 @@ import deposito.*
 
 object knightRider {
 
-	var puntos = 0
+	
 	method peso() = 500
 
-	method nivelDePeligrosidad() {
-		puntos = 10
-	}
+	method nivelDePeligrosidad()=10
+	
 
 }
 object bumblebee {
@@ -37,16 +36,14 @@ object robot {
 
 object paqueteLadrillos {
 
-	var puntos = 2
+	//var puntos = 2
 	var property cantladrillos =1
 	var pesoladrillo = 2
 
 
 	method peso() = cantladrillos * pesoladrillo
 
-	method nivelDePeligrosidad() {
-		return puntos
-	}
+	method nivelDePeligrosidad()=2
 
 }
 

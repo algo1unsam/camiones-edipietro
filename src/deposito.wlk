@@ -1,20 +1,18 @@
 import CosasAtransportar.*
 import transportes.*
+
 object deposito {
 
-	var property mercaderia=[]
-	var property objetosguardados = []
-  
+	var property cosas = []
+	var property transporte = []
 
-	method recibirCosas(cosas) {
-		mercaderia.addAll(cosas)
+	method recibirCosas() {
+		cosas.addAll(transporte.cosas())
 	}
-	
-	method llenarcamion(cosas){
-		mercaderia.forEach{cosa =>self.recibirCosas(cosas)}
+
+	method llenartransporte(elementos) {
+		cosas.forEach{ cosa => self.recibirCosas()}
 	}
-	
-	
 
 }
 
